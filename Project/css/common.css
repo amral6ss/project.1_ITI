@@ -139,7 +139,6 @@ body {
   background: rgba(231, 76, 60, 0.1);
 }
 
-/* ===== Modal ===== */
 .modal {
   position: fixed;
   inset: 0;
@@ -196,4 +195,5 @@ body {
     transform: scale(1);
   }
 }
+
 
