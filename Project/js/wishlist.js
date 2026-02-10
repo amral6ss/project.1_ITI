@@ -51,7 +51,7 @@ function loadWishlist() {
                 <p class="small text-muted">Category: ${product.category}</p>
 
                 <button class="btn btn-brand mb-2" onclick="addToCart(${product.id})">Add to Cart</button>
-                <button class="btn btn-outline-danger" onclick="removeFromWishlist(${product.id})">Remove ??</button>
+                <button class="btn btn-outline-danger" onclick="removeFromWishlist(${product.id})">Remove</button>
 
             </div>
         </div>
@@ -96,4 +96,5 @@ window.onload = () => {
         loadWishlist();
     }
 };
+
 
