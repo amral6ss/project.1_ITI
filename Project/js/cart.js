@@ -122,12 +122,20 @@ function decreaseQuantity(index) {
 }
 
 function clearCart() {
-    if (confirm('Are you sure you want to clear your cart?')) {
-        localStorage.setItem('carts', '[]');
-        displayCart();
-        updateNav();
-    }
+  document.getElementById("clearCartModal").style.display = "flex";
 }
+
+function closeModal() {
+  document.getElementById("clearCartModal").style.display = "none";
+}
+
+function confirmClearCart() {
+  localStorage.setItem('carts', '[]');
+  displayCart();
+  updateNav();
+  closeModal();
+}
+
 
 function checkout() {
     const cart = JSON.parse(localStorage.getItem('carts') || '[]');
@@ -152,7 +160,7 @@ function checkout() {
     localStorage.setItem('checkout', JSON.stringify(cart));
     showToast('Order placed successfully! Thank you', 'success');
     localStorage.setItem('carts', '[]');
-    setTimeout(() => window.location.href = 'paypal.html', 1500);
+    setTimeout(() => window.location.href = 'Paypal.html', 1500);
 }
 
 window.onload = () => {
@@ -161,4 +169,6 @@ window.onload = () => {
     displayCart();
     updateNav();
 };
+
+
 

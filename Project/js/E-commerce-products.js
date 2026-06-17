@@ -15,10 +15,16 @@ function checkAuth() {
 }
 
 function logout() {
-    if (confirm('Logout now?')) {
-        localStorage.removeItem('currentUser');
-        window.location.href = 'login.html';
-    }
+  document.getElementById("logoutModal").style.display = "flex";
+}
+
+function closeLogout() {
+  document.getElementById("logoutModal").style.display = "none";
+}
+
+function confirmLogout() {
+  localStorage.removeItem("currentUser");
+  window.location.href = "login.html";
 }
 
 function updateCartCount() {
@@ -264,4 +270,5 @@ window.onload = () => {
         updateCartCount();
     }
 };
+
 
